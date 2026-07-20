@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instituto Meta</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="header-left">
+            <h1>Instituto Meta</h1>
+        </div>
+
+        <div class="header-right">
+            <nav>
+
+                <a href="#inicio">Início</a>
+
+                <div class="dropdown">
+                    <button class="dropbtn">▼</button>
+                    <div class="dropdown-content">
+                        <a href="#sobre">Quem Somos</a>
+                        <a href="#cursos">Cursos</a>
+                        <a href="#contato">Contato</a>
+                        <a href="#faq">Perguntas Frequentes</a>
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+    </header>
+
+    <!-- BANNER -->
+
+    <section id="inicio" class="banner">
+
+        <div class="banner-texto">
+
+            <h2>Seu futuro começa aqui!</h2>
+
+            <p>Quer vencer? Tenha a META com você.</p>
+
+            <button onclick="irCursos()">
+
+                Conheça nossos cursos
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- SOBRE -->
+
+    <section id="sobre">
+
+        <h2>Quem Somos</h2>
+
+        <div class="sobre-container">
+
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Instituto Meta - Logo" class="logo-instituto">
+            </div>
+
+            <div class="texto-sobre">
+
+                <p>
+
+                    O <strong>Instituto Meta</strong> nasceu com o objetivo de transformar vidas por
+                    meio da educação. Nossa história começou oferecendo o
+                    Ensino Médio na modalidade EJA (Educação de Jovens e Adultos),
+                    possibilitando que muitas pessoas concluíssem seus estudos.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    Com o crescimento da instituição, passamos a oferecer cursos
+                    preparatórios para o ENEM, ampliando ainda mais as oportunidades
+                    para nossos alunos.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    Hoje contamos também com cursos de Informática Básica e Avançada,
+                    preparando nossos estudantes para o mercado de trabalho e para
+                    as exigências do mundo digital.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    O Instituto Meta trabalha em parceria com a
+                    <strong>UniFatecie</strong>, instituição de ensino superior
+                    reconhecida pelo MEC, oferecendo cursos de graduação e
+                    pós-graduação na modalidade EAD.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    A UniFatecie é referência nacional em educação a distância,
+                    disponibilizando cursos de qualidade, professores qualificados,
+                    ambiente virtual moderno e diploma reconhecido em todo o Brasil.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTADOR DE ALUNOS/CONQUISTAS -->
+
+    <section style="background:#ff6600; color:white; padding:60px 10%;">
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:30px; text-align:center;">
+
+            <div>
+                <div style="font-size:50px; font-weight:bold;" id="numAlunos">0</div>
+                <p style="font-size:18px; margin-top:5px;">Alunos Formados</p>
+            </div>
+
+            <div>
+                <div style="font-size:50px; font-weight:bold;" id="numCursos">0</div>
+                <p style="font-size:18px; margin-top:5px;">Cursos Oferecidos</p>
+            </div>
+
+            <div>
+                <div style="font-size:50px; font-weight:bold;" id="numAnos">0</div>
+                <p style="font-size:18px; margin-top:5px;">Anos de História</p>
+            </div>
+
+            <div>
+                <div style="font-size:50px; font-weight:bold;" id="numParcerias">0</div>
+                <p style="font-size:18px; margin-top:5px;">Parcerias</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CURSOS -->
+
+    <section id="cursos">
+
+        <h2>Nossos Cursos</h2>
+
+        <p class="clique">
+
+            Clique sobre um curso para conhecer mais.
+
+        </p>
+
+        <div class="cards">
+
+            <div class="card" onclick="mostrarCurso('informatica')">
+
+                <h3>Informática</h3>
+
+            </div>
+
+            <div class="card" onclick="abrirLink('https://docs.google.com/forms/u/0/?hl=pt-br')">
+
+                <h3>Ensino Médio EJA</h3>
+
+            </div>
+
+            <div class="card" onclick="mostrarCurso('profissionalizante')">
+
+                <h3>Cursos Profissionalizantes</h3>
+
+            </div>
+
+            <div class="card" onclick="mostrarCurso('tecnico')">
+
+                <h3>Cursos Técnicos</h3>
+
+            </div>
+
+            <div class="card" onclick="abrirLink('https://site.unifatecie.edu.br/cursos-graduacao-ead/')">
+
+                <h3>Graduação</h3>
+
+            </div>
+
+            <div class="card" onclick="abrirLink('https://site.unifatecie.edu.br/cursos-pos-graduacao-ead/')">
+
+                <h3>Pós-graduação</h3>
+
+            </div>
+
+        </div>
+
+        <!-- Área dinâmica -->
+
+        <div id="detalhesCurso" class="detalhes">
+
+            <h3>Selecione um curso acima.</h3>
+
+            <p>
+
+                As informações aparecerão aqui.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- TABELA -->
+
+    <section>
+
+        <h2>Cursos Disponíveis</h2>
+
+        <table>
+
+            <tr>
+
+                <th>Curso</th>
+
+                <th>Modalidade</th>
+
+                <th>Duração</th>
+
+            </tr>
+
+            <tr onclick="abrirCurso('informatica-basica')" style="cursor:pointer;">
+
+                <td>Informática Básica</td>
+
+                <td>Presencial</td>
+
+                <td>4 meses</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('informatica-avancada')" style="cursor:pointer;">
+
+                <td>Informática Avançada</td>
+
+                <td>Presencial</td>
+
+                <td>6 meses</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('eja')" style="cursor:pointer;">
+
+                <td>EJA Ensino Médio</td>
+
+                <td>Semi EAD</td>
+
+                <td>18 meses</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('profissionalizante')" style="cursor:pointer;">
+
+                <td>Curso Profissionalizante</td>
+
+                <td>Presencial</td>
+
+                <td>Conforme o curso</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('tecnico')" style="cursor:pointer;">
+
+                <td>Curso Técnico</td>
+
+                <td>Presencial</td>
+
+                <td>Conforme o curso</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('graduacao')" style="cursor:pointer;">
+
+                <td>Graduação</td>
+
+                <td>EAD</td>
+
+                <td>Conforme o curso</td>
+
+            </tr>
+
+            <tr onclick="abrirCurso('pos')" style="cursor:pointer;">
+
+                <td>Pós-graduação</td>
+
+                <td>EAD</td>
+
+                <td>Conforme o curso</td>
+
+            </tr>
+
+        </table>
+
+        <br><br>
+
+        <div style="text-align:center; background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.12);">
+
+            <h3 style="color:#ff6600; margin-bottom:15px;">🌟 Parceria com a UniFatecie</h3>
+
+            <p style="font-size:18px; margin-bottom:20px;">
+
+                O Instituto Meta é parceiro da <strong>UniFatecie</strong>, instituição de ensino superior reconhecida pelo MEC,
+
+                oferecendo cursos de graduação e pós-graduação na modalidade EAD com qualidade e excelência.
+
+            </p>
+
+            <a href="https://www.unifatecie.edu.br" target="_blank" 
+
+               style="display:inline-block; background:#ff6600; color:white; padding:15px 40px; 
+
+                      border-radius:8px; text-decoration:none; font-weight:bold; font-size:18px;
+
+                      transition:.3s;">
+
+                Conheça a UniFatecie
+
+            </a>
+
+        </div>
+
+        <br><br>
+
+        <div style="text-align:center; background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.12);">
+
+            <h3 style="color:#ff6600; margin-bottom:25px;">📸 Imagens do Nosso Ambiente</h3>
+
+            <div class="galeria">
+
+                <div class="galeria-item" onclick="abrirImagem('img/aula.png')">
+                    <img src="img/aula.png" alt="Sala de Aula">
+                    <p>Sala de Aula</p>
+                </div>
+
+                <div class="galeria-item" onclick="abrirImagem('img/entrada.png')">
+                    <img src="img/entrada.png" alt="Entrada do Instituto">
+                    <p>Entrada</p>
+                </div>
+
+                <div class="galeria-item" onclick="abrirImagem('img/salainfo.png')">
+                    <img src="img/salainfo.png" alt="Sala de Informática">
+                    <p>Sala de Informática</p>
+                </div>
+
+                <div class="galeria-item" onclick="abrirImagem('img/direcao.png')">
+                    <img src="img/direcao.png" alt="Direção">
+                    <p>Direção</p>
+                </div>
+
+                <div class="galeria-item" onclick="abrirImagem('img/biblioteca.png')">
+                    <img src="img/biblioteca.png" alt="Biblioteca">
+                    <p>Biblioteca</p>
+                </div>
+
+                <div class="galeria-item" onclick="abrirImagem('img/sala1.png')">
+                    <img src="img/sala1.png" alt="Sala 1">
+                    <p>Sala 1</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div style="text-align:center; background:#f9f9f9; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.12); border-left:4px solid #ff6600;">
+
+            <h3 style="color:#ff6600; margin-bottom:15px; font-size:24px;">Indique um Amigo e Ganhe Desconto!</h3>
+
+            <p style="font-size:16px; margin-bottom:10px; max-width:700px; margin-left:auto; margin-right:auto;">
+
+                Ao indicar um amigo, familiar ou colega para se matricular no Instituto Meta, 
+                você ganha <strong style="color:#ff6600;">desconto na parcela do seu curso</strong>.
+
+            </p>
+
+            <p style="font-size:14px; color:#888;">
+
+                * Consulte nossa equipe para mais detalhes sobre as condições da promoção.
+
+            </p>
+
+            <br>
+
+            <a href="#contato" style="display:inline-block; background:#ff6600; color:white; padding:12px 35px; border-radius:8px; text-decoration:none; font-weight:bold; font-size:16px; transition:.3s;"
+               onmouseover="this.style.background='#e45700'"
+               onmouseout="this.style.background='#ff6600'">
+
+                📞 Fale Conosco
+
+            </a>
+
+        </div>
+
+        <br><br>
+
+        <!-- FAQ - PERGUNTAS FREQUENTES -->
+
+        <div id="faq" style="background:white; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,.12);">
+
+            <h2 style="color:#ff6600; margin-bottom:25px;">❓ Perguntas Frequentes</h2>
+
+            <div style="max-width:800px; margin:0 auto;">
+
+                <div onclick="toggleFaq(this)" 
+                     style="background:#f9f9f9; margin-bottom:10px; border-radius:8px; padding:15px 20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.1); border-left:4px solid #ff6600;">
+
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:17px;">
+                        Como faço minha matrícula?
+                        <span style="color:#ff6600; font-size:20px; transition:.3s;">+</span>
+                    </div>
+
+                    <div class="faq-resposta" style="display:none; margin-top:12px; font-weight:normal; color:#555; line-height:1.6;">
+                        Acesse o site, preencha o formulário de contato ou entre em contato pelo WhatsApp (91) 98440-0383 que nossa equipe irá te auxiliar com todo o processo de matrícula.
+                    </div>
+
+                </div>
+
+                <div onclick="toggleFaq(this)" 
+                     style="background:#f9f9f9; margin-bottom:10px; border-radius:8px; padding:15px 20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.1); border-left:4px solid #ff6600;">
+
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:17px;">
+                        Quais os horários de atendimento?
+                        <span style="color:#ff6600; font-size:20px; transition:.3s;">+</span>
+                    </div>
+
+                    <div class="faq-resposta" style="display:none; margin-top:12px; font-weight:normal; color:#555; line-height:1.6;">
+                        Atendemos de segunda a sexta-feira, das 8h às 22h, e aos sábados das 8h às 12h. Nossa equipe está pronta para atender você!
+                    </div>
+
+                </div>
+
+                <div onclick="toggleFaq(this)" 
+                     style="background:#f9f9f9; margin-bottom:10px; border-radius:8px; padding:15px 20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.1); border-left:4px solid #ff6600;">
+
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:17px;">
+                        Os cursos têm certificado?
+                        <span style="color:#ff6600; font-size:20px; transition:.3s;">+</span>
+                    </div>
+
+                    <div class="faq-resposta" style="display:none; margin-top:12px; font-weight:normal; color:#555; line-height:1.6;">
+                        Sim! Todos os nossos cursos oferecem certificado de conclusão reconhecido, validando suas habilidades e conhecimentos para o mercado de trabalho.
+                    </div>
+
+                </div>
+
+                <div onclick="toggleFaq(this)" 
+                     style="background:#f9f9f9; margin-bottom:10px; border-radius:8px; padding:15px 20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.1); border-left:4px solid #ff6600;">
+
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:17px;">
+                        Quais formas de pagamento são aceitas?
+                        <span style="color:#ff6600; font-size:20px; transition:.3s;">+</span>
+                    </div>
+
+                    <div class="faq-resposta" style="display:none; margin-top:12px; font-weight:normal; color:#555; line-height:1.6;">
+                        Aceitamos pagamento em dinheiro, PIX, cartão de débito e crédito (parcelado). Consulte nossa equipe para mais detalhes sobre condições especiais.
+                    </div>
+
+                </div>
+
+                <div onclick="toggleFaq(this)" 
+                     style="background:#f9f9f9; margin-bottom:10px; border-radius:8px; padding:15px 20px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.1); border-left:4px solid #ff6600;">
+
+                    <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:17px;">
+                        Os cursos EJA têm aulas presenciais?
+                        <span style="color:#ff6600; font-size:20px; transition:.3s;">+</span>
+                    </div>
+
+                    <div class="faq-resposta" style="display:none; margin-top:12px; font-weight:normal; color:#555; line-height:1.6;">
+                        Sim! O Ensino Médio EJA é na modalidade Semi EAD, com aulas presenciais a cada 15 dias, oferecendo flexibilidade e acompanhamento pedagógico.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato">
+
+        <h2>Entre em Contato</h2>
+
+        <div class="contatos">
+
+            <p><strong>📍 Endereço:</strong> <a href="https://www.google.com/maps/search/Rua+Pau+D'Arco,+Gurupilândia,+Nova+Esperança+do+Piriá" target="_blank" style="color:#ff6600; text-decoration:none; font-weight:bold;">Rua Pau D'Arco, Gurupilândia, Nova Esperança do Piriá</a></p>
+
+            <p><strong>📱 WhatsApp:</strong> <a href="https://wa.me/5591984400383" target="_blank" style="color:#ff6600; text-decoration:none; font-weight:bold;">(91) 98440-0383</a></p>
+
+            <p><strong>📷 Instagram:</strong> <a href="https://www.instagram.com/institutometa.nep" target="_blank" style="color:#ff6600; text-decoration:none; font-weight:bold;">@institutometa.nep</a></p>
+
+            <p><strong>✉ Email:</strong> contato@institutometa.com</p>
+
+        </div>
+
+        <br>
+
+        <h3>Deixe sua dúvida ou sugestão</h3>
+
+        <textarea
+            id="mensagem"
+            placeholder="Digite sua mensagem..."></textarea>
+
+        <br>
+
+        <button onclick="salvarMensagem()">
+
+            Enviar Mensagem
+
+        </button>
+
+        <br><br>
+
+        <h3>Histórico de Mensagens</h3>
+
+        <div id="historico">
+
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <h3>Instituto Meta</h3>
+
+        <p>
+
+            Educação transformando vidas.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            © 2026 - Todos os direitos reservados.
+
+        </p>
+
+    </footer>
+
+    <!-- MODAL PARA IMAGENS -->
+
+    <div id="modalImagem" class="modal" onclick="fecharModal()">
+        <span class="modal-fechar" onclick="fecharModal()">&times;</span>
+        <img class="modal-conteudo" id="modalImg">
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
